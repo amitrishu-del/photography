@@ -1,12 +1,13 @@
 # Lense and Sensibility
 
-Amit Singh's photography website, hosted free on GitHub Pages. Each tab at the top of the site is one collection (for example **Mysore Trip**), plus an **About** tab.
+Amit Singh's photography website, live at **https://lenseandsensibility.com** (hosted free on GitHub Pages; the domain's DNS is on Cloudflare). Each tab at the top of the site is one collection (for example **Mysore Trip**), plus an **About** tab.
 
 - `index.html` is the gallery that visitors see.
 - `upload.html` is your private page for adding photos from a phone or laptop.
 - `photos.json` holds the site name, the About text, and every tab with its photos and captions.
 - `photos/` holds the image files. `photos/md/` and `photos/sm/` hold smaller copies that the gallery grid loads so pages open faster; the upload page makes these for you.
-- `share.jpg` is the picture shown when someone shares a link to the site (WhatsApp, LinkedIn and so on). The preview tags at the top of `index.html` point to `https://amitrishu-del.github.io/photography/`; change those two addresses if the site moves to another name or your own domain.
+- `share.jpg` is the picture shown when someone shares a link to the site (WhatsApp, LinkedIn and so on). The preview tags at the top of `index.html` point to `https://lenseandsensibility.com/`; change those two addresses if the site ever moves.
+- `CNAME` tells GitHub Pages to serve the site at lenseandsensibility.com. Keep it; deleting it takes the site off the domain.
 
 ---
 
@@ -44,7 +45,7 @@ The key lets your upload page save photos into this one repository, and nothing 
 4. Click **Generate token** and copy it right away. GitHub shows it only once.
 
 ### Step 5. Connect the upload page
-1. Open `https://YOUR-USERNAME.github.io/photography/upload.html`
+1. Open `https://lenseandsensibility.com/upload.html`
 2. Fill in your username, `photography`, and paste the key.
 3. Keep **Remember on this device** ticked on your own phone or laptop, and click **Connect**.
 

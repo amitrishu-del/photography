@@ -132,7 +132,8 @@ let queue=[]; // {file, blob, url, camera, title, subtitle, tag, story, cover}
 /* ---------- settings ---------- */
 function loadCfg(){try{const s=JSON.parse(localStorage.getItem("gallery-upload")||"null");if(s)cfg={...cfg,...s}}catch(e){}
   ["owner","repo","branch","token"].forEach(k=>$(k).value=cfg[k]||(k==="branch"?"main":""));
-  if(!cfg.repo){const m=location.hostname.match(/^([^.]+)\.github\.io$/);if(m){$("owner").value=m[1];$("repo").value=location.pathname.split("/").filter(Boolean)[0]||(m[1]+".github.io")}}
+  if(!cfg.repo){const m=location.hostname.match(/^([^.]+)\.github\.io$/);if(m){$("owner").value=m[1];$("repo").value=location.pathname.split("/").filter(Boolean)[0]||(m[1]+".github.io")}
+    else if(location.hostname.endsWith("lenseandsensibility.com")){$("owner").value="amitrishu-del";$("repo").value="photography"}}
 }
 function saveCfg(){try{if($("remember").checked)localStorage.setItem("gallery-upload",JSON.stringify(cfg));else localStorage.removeItem("gallery-upload")}catch(e){}}
 function msg(id,text,kind){const el=$(id);el.textContent=text;el.className="msg"+(kind?" "+kind:"")}
