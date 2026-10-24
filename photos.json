@@ -46,7 +46,7 @@
       ],
       "photos": [
         {
-          "file": "photos/elephant.jpg",
+          "file": "https://photos.lenseandsensibility.com/elephant.jpg",
           "title": "The elephant's dust bath",
           "subtitle": "Asian elephant",
           "tag": "Elephas maximus",
@@ -69,12 +69,12 @@
           ],
           "focus": "50% 90%",
           "hero": true,
-          "sm": "photos/sm/elephant.jpg",
-          "md": "photos/md/elephant.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/elephant.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/elephant.jpg",
           "w": 1296
         },
         {
-          "file": "photos/hippo.jpg",
+          "file": "https://photos.lenseandsensibility.com/hippo.jpg",
           "title": "Resting chin",
           "subtitle": "Hippopotamus",
           "tag": "Hippopotamus amphibius",
@@ -95,12 +95,12 @@
               "value": "Vulnerable"
             }
           ],
-          "sm": "photos/sm/hippo.jpg",
-          "md": "photos/md/hippo.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/hippo.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/hippo.jpg",
           "w": 1656
         },
         {
-          "file": "photos/gharial.jpg",
+          "file": "https://photos.lenseandsensibility.com/gharial.jpg",
           "title": "Seen from above",
           "subtitle": "Gharial",
           "tag": "Gavialis gangeticus",
@@ -122,12 +122,12 @@
             }
           ],
           "focus": "50% 40%",
-          "sm": "photos/sm/gharial.jpg",
-          "md": "photos/md/gharial.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/gharial.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/gharial.jpg",
           "w": 1548
         },
         {
-          "file": "photos/deer.jpg",
+          "file": "https://photos.lenseandsensibility.com/deer.jpg",
           "title": "The herd turns to look",
           "subtitle": "Spotted deer (chital)",
           "tag": "Axis axis",
@@ -149,12 +149,12 @@
             }
           ],
           "focus": "50% 55%",
-          "sm": "photos/sm/deer.jpg",
-          "md": "photos/md/deer.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/deer.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/deer.jpg",
           "w": 1800
         },
         {
-          "file": "photos/baboon.jpg",
+          "file": "https://photos.lenseandsensibility.com/baboon.jpg",
           "title": "On the lookout",
           "subtitle": "Hamadryas baboon",
           "tag": "Papio hamadryas",
@@ -176,12 +176,12 @@
             }
           ],
           "focus": "50% 45%",
-          "sm": "photos/sm/baboon.jpg",
-          "md": "photos/md/baboon.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/baboon.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/baboon.jpg",
           "w": 1116
         },
         {
-          "file": "photos/chimps.jpg",
+          "file": "https://photos.lenseandsensibility.com/chimps.jpg",
           "title": "Quiet company",
           "subtitle": "Chimpanzee",
           "tag": "Pan troglodytes",
@@ -203,12 +203,12 @@
             }
           ],
           "focus": "50% 45%",
-          "sm": "photos/sm/chimps.jpg",
-          "md": "photos/md/chimps.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/chimps.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/chimps.jpg",
           "w": 1080
         },
         {
-          "file": "photos/crocodile.jpg",
+          "file": "https://photos.lenseandsensibility.com/crocodile.jpg",
           "title": "Teeth in the shade",
           "subtitle": "Crocodile",
           "tag": "Crocodylus",
@@ -226,12 +226,12 @@
             }
           ],
           "focus": "50% 66%",
-          "sm": "photos/sm/crocodile.jpg",
-          "md": "photos/md/crocodile.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/crocodile.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/crocodile.jpg",
           "w": 1530
         },
         {
-          "file": "photos/lioness.jpg",
+          "file": "https://photos.lenseandsensibility.com/lioness.jpg",
           "title": "Watching the fence",
           "subtitle": "Lion",
           "tag": "Panthera leo",
@@ -252,12 +252,12 @@
               "value": "Vulnerable"
             }
           ],
-          "sm": "photos/sm/lioness.jpg",
-          "md": "photos/md/lioness.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/lioness.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/lioness.jpg",
           "w": 1116
         },
         {
-          "file": "photos/macaque.jpg",
+          "file": "https://photos.lenseandsensibility.com/macaque.jpg",
           "title": "Waiting on the log",
           "subtitle": "Rhesus macaque",
           "tag": "Macaca mulatta",
@@ -279,12 +279,12 @@
             }
           ],
           "focus": "50% 60%",
-          "sm": "photos/sm/macaque.jpg",
-          "md": "photos/md/macaque.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/macaque.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/macaque.jpg",
           "w": 1080
         },
         {
-          "file": "photos/leopard.jpg",
+          "file": "https://photos.lenseandsensibility.com/leopard.jpg",
           "title": "Afternoon nap",
           "subtitle": "Leopard",
           "tag": "Panthera pardus",
@@ -306,12 +306,12 @@
             }
           ],
           "focus": "50% 62%",
-          "sm": "photos/sm/leopard.jpg",
-          "md": "photos/md/leopard.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/leopard.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/leopard.jpg",
           "w": 1200
         },
         {
-          "file": "photos/painted-stork.jpg",
+          "file": "https://photos.lenseandsensibility.com/painted-stork.jpg",
           "title": "Painted in pink",
           "subtitle": "Painted stork",
           "tag": "Mycteria leucocephala",
@@ -332,12 +332,12 @@
               "value": "Near Threatened"
             }
           ],
-          "sm": "photos/sm/painted-stork.jpg",
-          "md": "photos/md/painted-stork.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/painted-stork.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/painted-stork.jpg",
           "w": 1800
         },
         {
-          "file": "photos/night-herons.jpg",
+          "file": "https://photos.lenseandsensibility.com/night-herons.jpg",
           "title": "Adults and young",
           "subtitle": "Black-crowned night heron",
           "tag": "Nycticorax nycticorax",
@@ -358,12 +358,12 @@
               "value": "Least Concern"
             }
           ],
-          "sm": "photos/sm/night-herons.jpg",
-          "md": "photos/md/night-herons.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/night-herons.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/night-herons.jpg",
           "w": 1500
         },
         {
-          "file": "photos/elephant-herd.jpg",
+          "file": "https://photos.lenseandsensibility.com/elephant-herd.jpg",
           "title": "Hay on their backs",
           "subtitle": "Asian elephants",
           "tag": "Elephas maximus",
@@ -385,12 +385,12 @@
             }
           ],
           "focus": "50% 56%",
-          "sm": "photos/sm/elephant-herd.jpg",
-          "md": "photos/md/elephant-herd.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/elephant-herd.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/elephant-herd.jpg",
           "w": 1460
         },
         {
-          "file": "photos/sambar.jpg",
+          "file": "https://photos.lenseandsensibility.com/sambar.jpg",
           "title": "Ears up",
           "subtitle": "Sambar deer",
           "tag": "Rusa unicolor",
@@ -411,12 +411,12 @@
               "value": "Vulnerable"
             }
           ],
-          "sm": "photos/sm/sambar.jpg",
-          "md": "photos/md/sambar.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/sambar.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/sambar.jpg",
           "w": 1400
         },
         {
-          "file": "photos/giraffe.jpg",
+          "file": "https://photos.lenseandsensibility.com/giraffe.jpg",
           "title": "Over the rail",
           "subtitle": "Giraffe",
           "tag": "Giraffa camelopardalis",
@@ -437,12 +437,12 @@
               "value": "Vulnerable"
             }
           ],
-          "sm": "photos/sm/giraffe.jpg",
-          "md": "photos/md/giraffe.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/giraffe.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/giraffe.jpg",
           "w": 1600
         },
         {
-          "file": "photos/aviary.jpg",
+          "file": "https://photos.lenseandsensibility.com/aviary.jpg",
           "title": "Sharing the treetop",
           "subtitle": "Painted stork and night herons",
           "tag": "Walk-through aviary",
@@ -455,12 +455,12 @@
             }
           ],
           "focus": "50% 55%",
-          "sm": "photos/sm/aviary.jpg",
-          "md": "photos/md/aviary.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/aviary.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/aviary.jpg",
           "w": 1600
         },
         {
-          "file": "photos/zoo-shuttle.jpg",
+          "file": "https://photos.lenseandsensibility.com/zoo-shuttle.jpg",
           "title": "The ride around",
           "subtitle": "Zoo shuttle",
           "tag": "Mysore Zoo",
@@ -468,8 +468,8 @@
           "alt": "A green battery-powered cart carrying visitors along a paved path lined with trees and bamboo",
           "facts": [],
           "focus": "50% 62%",
-          "sm": "photos/sm/zoo-shuttle.jpg",
-          "md": "photos/md/zoo-shuttle.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/zoo-shuttle.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/zoo-shuttle.jpg",
           "w": 1200
         }
       ]
@@ -500,9 +500,9 @@
       ],
       "photos": [
         {
-          "file": "photos/cheetah.jpg",
-          "sm": "photos/sm/cheetah.jpg",
-          "md": "photos/md/cheetah.jpg",
+          "file": "https://photos.lenseandsensibility.com/cheetah.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/cheetah.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/cheetah.jpg",
           "w": 979,
           "title": "Sitting tall",
           "subtitle": "Cheetah",
@@ -528,9 +528,9 @@
           "focus": "50% 4%"
         },
         {
-          "file": "photos/lioness-portrait.jpg",
-          "sm": "photos/sm/lioness-portrait.jpg",
-          "md": "photos/md/lioness-portrait.jpg",
+          "file": "https://photos.lenseandsensibility.com/lioness-portrait.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/lioness-portrait.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/lioness-portrait.jpg",
           "w": 1469,
           "title": "The long look",
           "subtitle": "Lion",
@@ -555,9 +555,9 @@
           "focus": "50% 30%"
         },
         {
-          "file": "photos/green-tree-python.jpg",
-          "sm": "photos/sm/green-tree-python.jpg",
-          "md": "photos/md/green-tree-python.jpg",
+          "file": "https://photos.lenseandsensibility.com/green-tree-python.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/green-tree-python.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/green-tree-python.jpg",
           "w": 977,
           "title": "Coiled and waiting",
           "subtitle": "Green tree python",
@@ -581,9 +581,9 @@
           ]
         },
         {
-          "file": "photos/white-rhinos.jpg",
-          "sm": "photos/sm/white-rhinos.jpg",
-          "md": "photos/md/white-rhinos.jpg",
+          "file": "https://photos.lenseandsensibility.com/white-rhinos.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/white-rhinos.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/white-rhinos.jpg",
           "w": 1028,
           "title": "Heads down",
           "subtitle": "White rhinoceros",
@@ -608,9 +608,9 @@
           "focus": "50% 45%"
         },
         {
-          "file": "photos/toucan.jpg",
-          "sm": "photos/sm/toucan.jpg",
-          "md": "photos/md/toucan.jpg",
+          "file": "https://photos.lenseandsensibility.com/toucan.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/toucan.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/toucan.jpg",
           "w": 1800,
           "title": "Bill first",
           "subtitle": "Channel-billed toucan",
@@ -630,9 +630,9 @@
           ]
         },
         {
-          "file": "photos/golden-parakeet.jpg",
-          "sm": "photos/sm/golden-parakeet.jpg",
-          "md": "photos/md/golden-parakeet.jpg",
+          "file": "https://photos.lenseandsensibility.com/golden-parakeet.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/golden-parakeet.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/golden-parakeet.jpg",
           "w": 869,
           "title": "Gold and green",
           "subtitle": "Golden parakeet",
@@ -656,9 +656,9 @@
           ]
         },
         {
-          "file": "photos/lioness-prowl.jpg",
-          "sm": "photos/sm/lioness-prowl.jpg",
-          "md": "photos/md/lioness-prowl.jpg",
+          "file": "https://photos.lenseandsensibility.com/lioness-prowl.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/lioness-prowl.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/lioness-prowl.jpg",
           "w": 1054,
           "title": "On the prowl",
           "subtitle": "Lion",
@@ -683,9 +683,9 @@
           "focus": "50% 45%"
         },
         {
-          "file": "photos/warthog.jpg",
-          "sm": "photos/sm/warthog.jpg",
-          "md": "photos/md/warthog.jpg",
+          "file": "https://photos.lenseandsensibility.com/warthog.jpg",
+          "sm": "https://photos.lenseandsensibility.com/sm/warthog.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/warthog.jpg",
           "w": 1074,
           "title": "Down on its knees",
           "subtitle": "Common warthog",

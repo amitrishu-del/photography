@@ -331,7 +331,7 @@ async function refreshExisting(){
     const any=data.albums.some(a=>(a.photos||[]).length);
     $("existing").innerHTML=any?data.albums.filter(a=>(a.photos||[]).length).map(a=>`<div class="group" style="grid-column:1/-1">${esc(a.title)}</div>`+
       a.photos.map(p=>`<div class="ex">
-      <img loading="lazy" src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/${p.sm||p.file}" alt="">
+      <img loading="lazy" src="${esc(/^https?:/.test(p.sm||p.file)?(p.sm||p.file):`https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/${p.sm||p.file}`)}" alt="">
       <div class="t">${esc(p.title)}</div>
       ${p.hero?`<div class="cover">Cover photo</div>`:""}
       <div class="b">${p.hero?"":`<button data-cover="${esc(p.file)}">Make cover</button>`}<button data-del="${esc(p.file)}">Remove</button></div></div>`).join("")).join("")
@@ -352,7 +352,8 @@ $("existing").addEventListener("click",async e=>{
       if(!confirm(`Remove “${p.title}” from the gallery? This deletes the photo file too.`))return;
       msg("man-msg","Removing…");
       await updateGallery(g=>{const a=albumOf(g,p.file);if(a)a.photos=a.photos.filter(x=>x.file!==p.file)},`Remove photo: ${p.title}`);
-      for(const path of [p.file,p.md,p.sm].filter(Boolean)){
+      /* photos stored on R2 (full https addresses) are only removed from the gallery here; their files stay in the bucket */
+      for(const path of [p.file,p.md,p.sm].filter(x=>x&&!/^https?:/.test(x))){
         try{const f=await gh(`/contents/${path}?ref=${encodeURIComponent(cfg.branch)}`);
           await gh(`/contents/${path}`,{method:"DELETE",body:JSON.stringify({message:`Delete ${path}`,branch:cfg.branch,sha:f.sha})})}catch(err){}
       }
