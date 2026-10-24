@@ -416,12 +416,12 @@
           "w": 1400
         },
         {
-          "file": "https://photos.lenseandsensibility.com/giraffe.jpg",
-          "title": "Over the rail",
+          "file": "https://photos.lenseandsensibility.com/giraffe-2.jpg",
+          "title": "Long stride",
           "subtitle": "Giraffe",
           "tag": "Giraffa camelopardalis",
-          "story": "A giraffe walks past the railing with the trees behind it softly out of focus. Every giraffe has its own coat pattern, like a fingerprint.",
-          "alt": "Head and neck of a giraffe in profile above a black railing, green trees blurred behind",
+          "story": "A giraffe strides past the railing, its long neck reaching toward the trees. Every giraffe has its own coat pattern, like a fingerprint.",
+          "alt": "A giraffe walking past a black railing, seen side-on, with green trees behind",
           "facts": [
             {
               "label": "Species",
@@ -437,9 +437,9 @@
               "value": "Vulnerable"
             }
           ],
-          "sm": "https://photos.lenseandsensibility.com/sm/giraffe.jpg",
-          "md": "https://photos.lenseandsensibility.com/md/giraffe.jpg",
-          "w": 1600
+          "sm": "https://photos.lenseandsensibility.com/sm/giraffe-2.jpg",
+          "md": "https://photos.lenseandsensibility.com/md/giraffe-2.jpg",
+          "w": 1410
         },
         {
           "file": "https://photos.lenseandsensibility.com/aviary.jpg",
