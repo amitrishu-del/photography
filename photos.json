@@ -473,6 +473,243 @@
           "w": 1200
         }
       ]
+    },
+    {
+      "id": "singapore-zoo",
+      "title": "Singapore Zoo",
+      "label": "Singapore Zoo · 2017",
+      "eyebrow": "Mandai Wildlife Reserve, Singapore",
+      "heading": "A cheetah's",
+      "headingEm": "steady gaze",
+      "subtitle": "Eight photographs from Singapore Zoo, from a watchful cheetah to a coiled green tree python.",
+      "intro": "From a 2017 trip to Singapore Zoo, where the animals live in open, rainforest-style enclosures. Tap any photo to see it full screen with a short note about the animal.",
+      "camera": "Canon EOS 700D",
+      "facts": [
+        {
+          "n": "auto",
+          "l": "Photographs"
+        },
+        {
+          "n": "7",
+          "l": "Species"
+        },
+        {
+          "n": "4",
+          "l": "Continents"
+        }
+      ],
+      "photos": [
+        {
+          "file": "photos/cheetah.jpg",
+          "sm": "photos/sm/cheetah.jpg",
+          "md": "photos/md/cheetah.jpg",
+          "w": 979,
+          "title": "Sitting tall",
+          "subtitle": "Cheetah",
+          "tag": "Acinonyx jubatus",
+          "story": "The cheetah sat up on the grass and looked straight at the camera. The black tear lines under its eyes are thought to cut glare from the sun.",
+          "alt": "A cheetah sitting upright on green grass, facing the camera",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Acinonyx jubatus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Africa and Iran"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "hero": true,
+          "focus": "50% 4%"
+        },
+        {
+          "file": "photos/lioness-portrait.jpg",
+          "sm": "photos/sm/lioness-portrait.jpg",
+          "md": "photos/md/lioness-portrait.jpg",
+          "w": 1469,
+          "title": "The long look",
+          "subtitle": "Lion",
+          "tag": "Panthera leo",
+          "story": "A lioness resting with her paws crossed, giving the camera a slow, sleepy stare. Lions can rest for up to 20 hours a day.",
+          "alt": "Close portrait of a lioness lying down with her front paws crossed, dark leaves behind",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Panthera leo",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Africa and Gir Forest, India"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "focus": "50% 30%"
+        },
+        {
+          "file": "photos/green-tree-python.jpg",
+          "sm": "photos/sm/green-tree-python.jpg",
+          "md": "photos/md/green-tree-python.jpg",
+          "w": 977,
+          "title": "Coiled and waiting",
+          "subtitle": "Green tree python",
+          "tag": "Morelia viridis",
+          "story": "Neat coils over a branch with the head tucked in the middle, the classic green tree python pose. The young are born yellow or red and turn green as they grow.",
+          "alt": "A bright green snake coiled in loops over a branch, its head resting in the middle",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Morelia viridis",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "New Guinea and northern Australia"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ]
+        },
+        {
+          "file": "photos/white-rhinos.jpg",
+          "sm": "photos/sm/white-rhinos.jpg",
+          "md": "photos/md/white-rhinos.jpg",
+          "w": 1028,
+          "title": "Heads down",
+          "subtitle": "White rhinoceros",
+          "tag": "Ceratotherium simum",
+          "story": "Two rhinos graze side by side, with a small bird riding on one's back. White rhinos have wide, square lips made for cropping grass.",
+          "alt": "Two white rhinoceroses grazing behind a green hedge, a small bird on one's back",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Ceratotherium simum",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Southern and East Africa"
+            },
+            {
+              "label": "Status",
+              "value": "Near Threatened"
+            }
+          ],
+          "focus": "50% 45%"
+        },
+        {
+          "file": "photos/toucan.jpg",
+          "sm": "photos/sm/toucan.jpg",
+          "md": "photos/md/toucan.jpg",
+          "w": 1800,
+          "title": "Bill first",
+          "subtitle": "Channel-billed toucan",
+          "tag": "Ramphastos vitellinus",
+          "story": "That huge bill looks heavy but is mostly hollow and light. Toucans also use it to shed body heat.",
+          "alt": "A toucan with a black bill, blue face and yellow chest perched on a mossy branch",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Ramphastos vitellinus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Northern South America"
+            }
+          ]
+        },
+        {
+          "file": "photos/golden-parakeet.jpg",
+          "sm": "photos/sm/golden-parakeet.jpg",
+          "md": "photos/md/golden-parakeet.jpg",
+          "w": 869,
+          "title": "Gold and green",
+          "subtitle": "Golden parakeet",
+          "tag": "Guaruba guarouba",
+          "story": "Bright yellow with green flight feathers. In the wild it lives only in the Amazon rainforest of northern Brazil.",
+          "alt": "A golden-yellow parakeet with green wing feathers perched on a bare branch",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Guaruba guarouba",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Northern Brazil"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ]
+        },
+        {
+          "file": "photos/lioness-prowl.jpg",
+          "sm": "photos/sm/lioness-prowl.jpg",
+          "md": "photos/md/lioness-prowl.jpg",
+          "w": 1054,
+          "title": "On the prowl",
+          "subtitle": "Lion",
+          "tag": "Panthera leo",
+          "story": "A lioness walks along the rock edge, lit against a dark wall of leaves.",
+          "alt": "A lioness walking along a rock ledge against a dark background",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Panthera leo",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Africa and Gir Forest, India"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "focus": "50% 45%"
+        },
+        {
+          "file": "photos/warthog.jpg",
+          "sm": "photos/sm/warthog.jpg",
+          "md": "photos/md/warthog.jpg",
+          "w": 1074,
+          "title": "Down on its knees",
+          "subtitle": "Common warthog",
+          "tag": "Phacochoerus africanus",
+          "story": "Warthogs kneel on thick pads on their front knees to graze and dig for roots. The curved tusks are teeth that keep growing.",
+          "alt": "A muddy warthog kneeling on its front knees beside large green leaves",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Phacochoerus africanus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Sub-Saharan Africa"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ],
+          "focus": "50% 45%"
+        }
+      ]
     }
   ]
 }

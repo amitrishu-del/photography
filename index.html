@@ -255,7 +255,7 @@ let PHOTOS=[],SITE={},ALBUMS=[],ALBUM={},cur=0,lastFocus=null;
 function cameraLine(p){
   const c=p.camera||{};
   const settings=[c.focal,c.f,c.s,c.iso].filter(Boolean).join(" · ");
-  return {body:c.body||ALBUM.camera||SITE.camera||"",lens:c.lens||"",settings};
+  return {body:c.body||(ALBUM.camera??SITE.camera)||"",lens:c.lens||"",settings};
 }
 
 /* older photos.json files had one flat photo list; treat that as a single tab */
@@ -318,7 +318,7 @@ function render(album){
   $("subtitle").textContent=album.subtitle||"";
   $("intro").textContent=album.intro||"";
   $("facts").innerHTML=(album.facts||[{n:"auto",l:"Photographs"}]).map(f=>`<div class="fact"><div class="n">${esc(f.n==="auto"?PHOTOS.length:f.n)}</div><div class="l">${esc(f.l)}</div></div>`).join("");
-  const cam=album.camera||SITE.camera;
+  const cam=album.camera??SITE.camera; // an album can set camera to "" when it is unknown
   $("camera-note").textContent=cam?`Shot on ${cam}`:"";
   document.title=`${album.title} · ${SITE.name||""}`;
 
