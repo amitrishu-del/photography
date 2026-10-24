@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lense and Sensibility</title>
+<meta name="description" content="Lense and Sensibility: photographs by Amit Singh."><!-- Link preview for WhatsApp, LinkedIn, X and others. Preview sites need full web addresses: update og:url and og:image below if the site moves (another repo name or your own domain). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lense and Sensibility">
+<meta property="og:title" content="Lense and Sensibility">
+<meta property="og:description" content="Photographs by Amit Singh, from trips and slow days with a camera.">
+<meta property="og:url" content="https://amitrishu-del.github.io/photography/">
+<meta property="og:image" content="https://amitrishu-del.github.io/photography/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="An elephant throwing dust over its back, with the words Lense and Sensibility">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23d8c39a' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f2efe8'/%3E%3C/svg%3E">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#141414" id="theme-color">
+<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: gallery wall. Hero print, then a two-column wall where every third print runs full width; full-screen viewer with a field-note strip.
+   Colours: neutral charcoal (so the wall never tints the photos) with a gold accent; a warm-paper light theme follows the device setting
+   or the sun/moon button. The full-screen viewer stays dark in both. */
+:root{
+  --wall:#141414;
+  --wall-2:#1d1d1c;
+  --ink:#ece9e3;
+  --ink-soft:#cfccc4;
+  --ink-dim:#9b9890;
+  --line:#2d2d2b;
+  --accent:#d8c39a;
+  --gold:#e6d3a8;
+  --f-display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-data:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--wall:#f6f3ec;--wall-2:#ebe6db;--ink:#1d1c19;--ink-soft:#3d3a34;--ink-dim:#6b675e;--line:#ddd6c8;--accent:#7d5f27;--gold:#8f6d2e;color-scheme:light}
+}
+:root[data-theme="light"]{--wall:#f6f3ec;--wall-2:#ebe6db;--ink:#1d1c19;--ink-soft:#3d3a34;--ink-dim:#6b675e;--line:#ddd6c8;--accent:#7d5f27;--gold:#8f6d2e;color-scheme:light}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--wall);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 48px}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1180px;margin:0 auto}
+
+header.top{display:flex;justify-content:space-between;align-items:center;gap:6px 16px;padding-block:26px 14px;flex-wrap:wrap}
+.brand{font-family:var(--f-display);font-size:clamp(28px,4.4vw,40px);font-weight:600;letter-spacing:.01em;line-height:1.05;color:var(--ink);text-decoration:none}
+.brand em{color:var(--gold);font-weight:500}
+.head-right{display:flex;align-items:center;gap:14px}
+.theme-switch{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px}
+.theme-switch button{all:unset;cursor:pointer;width:30px;height:28px;display:grid;place-items:center;border-radius:999px;color:var(--ink-dim)}
+.theme-switch button:hover{color:var(--ink)}
+.theme-switch button[aria-checked="true"]{background:var(--wall-2);color:var(--accent)}
+.theme-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.theme-switch svg{width:16px;height:16px}
+.navnote{font-family:var(--f-body);font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+
+/* tab bar: scrolls sideways inside itself on narrow screens, never the page */
+nav.tabs{display:flex;gap:26px;border-bottom:1px solid var(--line);margin-bottom:24px;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{flex:none;padding:10px 0 12px;font-family:var(--f-body);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav.tabs a:hover{color:var(--ink)}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.tabs .n{color:var(--ink-dim);margin-left:6px;font-variant-numeric:tabular-nums}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;padding-block:12px 8px}
+.about h2{font-family:var(--f-display);font-weight:500;font-size:clamp(30px,4.5vw,48px);line-height:1.05;margin:0 0 6px}
+.about-head{display:flex;align-items:center;gap:clamp(16px,3vw,26px);margin-bottom:22px}
+.portrait{width:clamp(96px,16vw,148px);aspect-ratio:1;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line)}
+.role{font-family:var(--f-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.list-label{color:var(--ink-dim);margin:6px 0 14px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.links a{font-family:var(--f-body);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.about p{margin:0 0 14px;max-width:62ch;color:var(--ink-soft);font-size:16px}
+.about ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;align-content:start}
+.about li{border-left:1px solid var(--line);padding-left:12px}
+.about li a{color:var(--ink);text-decoration:none;font-family:var(--f-display);font-size:22px;font-weight:600}
+.about li a:hover{color:var(--accent)}
+.about li span{display:block;font-family:var(--f-body);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+@media (max-width:720px){.about{grid-template-columns:1fr;gap:20px}}
+
+/* home: one card per collection; with an odd count the first card runs full width */
+.welcome{font-family:var(--f-display);font-weight:500;font-size:clamp(30px,5vw,56px);line-height:1.05;margin:8px 0 28px;max-width:22ch;text-wrap:balance}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+a.card{position:relative;display:block;border-radius:4px;overflow:hidden;background:var(--wall-2);color:var(--ink);text-decoration:none;min-width:0}
+a.card img{display:block;width:100%;max-width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.cards .card:first-child:nth-last-child(odd){grid-column:1/-1}
+.cards .card:first-child:nth-last-child(odd) img{aspect-ratio:21/9}
+@media (max-width:560px){.cards .card:first-child:nth-last-child(odd) img{aspect-ratio:4/3}}
+a.card:hover img{transform:scale(1.02)}
+a.card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.card .veil,.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.85)),linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0) 62%)}
+.card .copy,.hero .copy{color:#fbf9f4;text-shadow:0 1px 2px rgba(0,0,0,.55),0 2px 16px rgba(0,0,0,.4)}
+.copy .eyebrow{color:#f3e2bb;font-weight:700}
+.card .copy{position:absolute;left:clamp(16px,3vw,32px);right:16px;bottom:clamp(14px,3vw,28px)}
+.card h2{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,4.4vw,52px);line-height:1;margin:.15em 0 .15em}
+.card p{margin:0;color:#f0ede6;font-weight:500;max-width:56ch;font-size:clamp(13px,1.4vw,15px)}
+.card .more{font-family:var(--f-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(251,249,244,.85);margin-top:8px}
+@media (prefers-reduced-motion:reduce){a.card img{transition:none}}
+
+.hero{position:relative;border-radius:4px;overflow:hidden;cursor:zoom-in;background:var(--wall-2)}
+.hero img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;max-width:100%}
+.hero .copy{position:absolute;left:clamp(16px,4vw,44px);right:16px;bottom:clamp(14px,3.5vw,38px)}
+.eyebrow{font-family:var(--f-body);font-weight:600;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-family:var(--f-display);font-weight:600;font-size:clamp(32px,6.2vw,74px);line-height:1;margin:.15em 0 .1em;text-wrap:balance}
+.hero h1 em{font-style:italic;color:#f0dcae}
+.hero p{margin:0;color:#f0ede6;font-weight:500;max-width:52ch;font-size:clamp(13px,1.5vw,16px)}
+@media (max-width:560px){.hero img{aspect-ratio:4/3}}
+
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;padding-block:36px 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.intro p{margin:0;max-width:62ch;color:var(--ink-soft);font-size:16px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-content:start}
+.fact{border-left:1px solid var(--line);padding-left:12px}
+.fact .n{font-family:var(--f-display);font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-family:var(--f-body);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px}
+@media (max-width:720px){.intro{grid-template-columns:1fr;gap:20px}}
+
+.wall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 20px}
+.wall .wide{grid-column:1/-1}
+@media (max-width:640px){.wall{grid-template-columns:1fr}}
+figure.print{margin:0;cursor:zoom-in;min-width:0}
+figure.print .frame{overflow:hidden;border-radius:3px;background:var(--wall-2)}
+figure.print img{display:block;width:100%;max-width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+figure.print.wide img{aspect-ratio:16/7}
+@media (max-width:640px){figure.print.wide img{aspect-ratio:3/2}}
+figure.print:hover img{transform:scale(1.02)}
+figure.print:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+figure.print figcaption{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding-top:10px}
+figure.print figcaption > div{min-width:0}
+.cap-title{font-family:var(--f-display);font-size:21px;font-weight:600;line-height:1.2}
+.cap-sub{font-size:13px;color:var(--ink-dim)}
+.cap-tag{font-family:var(--f-data);font-size:11px;color:var(--ink-dim);font-style:italic;text-align:right}
+
+footer{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-dim)}
+.status{padding:60px 0;text-align:center;color:var(--ink-dim)}
+
+.lb{--ink:#ece9e3;--ink-soft:#cfccc4;--ink-dim:#9b9890;--line:#2d2d2b;--accent:#d8c39a;color:var(--ink);color-scheme:dark;
+  position:fixed;inset:0;z-index:50;background:rgba(8,8,8,.97);display:grid;grid-template-rows:1fr auto;
+  padding:calc(58px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.lb .stage{display:flex;align-items:center;justify-content:center;min-height:0;touch-action:pan-y}
+.lb .stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:2px}
+.lb .info{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;max-width:1100px;width:100%;margin:16px auto 0}
+.lb .info > div{min-width:0}
+.lb h2{font-family:var(--f-display);font-weight:500;font-size:clamp(22px,3vw,32px);margin:0;line-height:1.1}
+.lb .story{margin:6px 0 0;color:var(--ink-soft);max-width:62ch;font-size:14px}
+.strip{display:flex;gap:18px;font-family:var(--f-data);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);flex-wrap:wrap}
+.strip b{display:block;color:var(--ink);font-weight:500;font-size:13px;letter-spacing:0}
+.strip i{font-style:italic}
+.lb .ctrl{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));right:max(14px, env(safe-area-inset-right,0px));display:flex;gap:8px;align-items:center}
+.btn{all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid #3a3a38;color:var(--ink);background:rgba(22,22,21,.75);font-size:18px}
+.btn:hover{border-color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.lb .count{font-family:var(--f-data);font-size:12px;color:var(--ink-dim);margin-right:6px;font-variant-numeric:tabular-nums}
+.lb .prev,.lb .next{position:absolute;top:45%}
+.lb .prev{left:max(14px, env(safe-area-inset-left,0px))}
+.lb .next{right:max(14px, env(safe-area-inset-right,0px))}
+@media (max-width:640px){.lb .prev,.lb .next{display:none}}
+@media (prefers-reduced-motion:reduce){figure.print img{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" id="brand" href="#">Lense <em>and</em> Sensibility</a>
+    <div class="head-right">
+      <div class="navnote" id="tagline"></div>
+      <div class="theme-switch" id="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button type="button" role="radio" data-choice="auto" aria-label="Auto: match this device" title="Auto: match this device">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+        <button type="button" role="radio" data-choice="light" aria-label="Light" title="Light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+        <button type="button" role="radio" data-choice="dark" aria-label="Dark" title="Dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Collections"></nav>
+
+  <section id="home-view" hidden>
+    <h1 class="welcome" id="welcome"></h1>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="album-view" hidden>
+  <div class="hero" id="hero" tabindex="0" role="button" aria-label="Open the cover photo">
+    <img id="hero-img" alt="">
+    <div class="veil"></div>
+    <div class="copy">
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="heading"></h1>
+      <p id="subtitle"></p>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p id="intro"></p>
+    <div class="facts" id="facts"></div>
+  </div>
+
+  <div class="wall" id="wall"></div>
+  </section>
+
+  <section class="about" id="about-view" hidden>
+    <div>
+      <div class="about-head">
+        <img class="portrait" id="portrait" alt="" hidden>
+        <div><h2 id="about-name">About</h2><div class="role" id="about-role"></div></div>
+      </div>
+      <div id="about-text"></div>
+      <div class="links" id="about-links"></div>
+    </div>
+    <div><div class="role list-label">Collections</div><ul id="about-list"></ul></div>
+  </section>
+  <div class="status" id="status" hidden></div>
+
+  <footer>
+    <span id="copyright"></span>
+    <span id="camera-note"></span>
+  </footer>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="ctrl"><span class="count" id="lb-count"></span><button class="btn" id="lb-close" aria-label="Close">✕</button></div>
+  <button class="btn prev" id="lb-prev" aria-label="Previous photo">‹</button>
+  <button class="btn next" id="lb-next" aria-label="Next photo">›</button>
+  <div class="stage" id="lb-stage"><img id="lb-img" alt=""></div>
+  <div class="info">
+    <div>
+      <div class="eyebrow" id="lb-sub"></div>
+      <h2 id="lb-title"></h2>
+      <p class="story" id="lb-story"></p>
+    </div>
+    <div class="strip" id="lb-strip"></div>
+  </div>
+</div>
+
+<script>
+/* All text and photos come from photos.json. Edit that file (or use upload.html) to change the gallery. */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let PHOTOS=[],SITE={},ALBUMS=[],ALBUM={},cur=0,lastFocus=null;
+
+function cameraLine(p){
+  const c=p.camera||{};
+  const settings=[c.focal,c.f,c.s,c.iso].filter(Boolean).join(" · ");
+  return {body:c.body||ALBUM.camera||SITE.camera||"",lens:c.lens||"",settings};
+}
+
+/* older photos.json files had one flat photo list; treat that as a single tab */
+function normalize(data){
+  if(!data.albums)data.albums=[{id:"photos",title:"Photos",...(data.site||{}),photos:data.photos||[]}];
+  return data;
+}
+
+function setup(data){
+  data=normalize(data);
+  SITE=data.site||{};ALBUMS=data.albums;
+  const name=SITE.name||"Photographs";
+  $("brand").innerHTML=esc(name).replace(/ and /," <em>and</em> ");
+  $("tagline").textContent=SITE.tagline||"";
+  document.title=name;
+  $("tabs").innerHTML=`<a href="#" data-id="home">Home</a>`
+    +ALBUMS.map(a=>`<a href="#${esc(a.id)}" data-id="${esc(a.id)}">${esc(a.title)}<span class="n">${(a.photos||[]).length}</span></a>`).join("")
+    +`<a href="#about" data-id="about">About</a>`;
+  $("welcome").textContent=SITE.welcome||"";
+  $("cards").innerHTML=ALBUMS.filter(a=>(a.photos||[]).length).map((a,k)=>{
+    const ps=a.photos,c=ps.find(p=>p.hero)||ps[0];
+    return `<a class="card" href="#${esc(a.id)}">${img(c,k===0?WIDE:HALF,k?"lazy":"eager")}
+      <div class="veil"></div><div class="copy"><div class="eyebrow">${esc(a.label||"")}</div><h2>${esc(a.title)}</h2>
+      <p>${esc(a.subtitle||"")}</p><div class="more">${ps.length} photographs →</div></div></a>`}).join("");
+  $("about-text").innerHTML=(SITE.about||[]).map(p=>`<p>${esc(p)}</p>`).join("");
+  if(SITE.aboutName||SITE.author)$("about-name").textContent=SITE.aboutName||SITE.author;
+  $("about-role").textContent=SITE.role||"";
+  if(SITE.portrait){$("portrait").src=SITE.portrait;$("portrait").alt=`Portrait of ${SITE.author||""}`;$("portrait").hidden=false}
+  $("about-links").innerHTML=(SITE.links||[]).filter(l=>/^https:\/\//.test(l.url))
+    .map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("");
+  $("about-list").innerHTML=ALBUMS.map(a=>`<li><span>${esc(a.label||"")}</span><a href="#${esc(a.id)}">${esc(a.title)}</a></li>`).join("");
+  $("copyright").textContent=`© ${new Date().getFullYear()} ${SITE.author||""}. All photographs are my own.`;
+  route();
+}
+
+function route(){
+  const id=decodeURIComponent(location.hash.slice(1));
+  const album=ALBUMS.find(a=>a.id===id);
+  const view=album?"album":id==="about"?"about":"home";
+  const sel=album?album.id:view;
+  [...$("tabs").children].forEach(t=>t.dataset.id===sel?t.setAttribute("aria-current","page"):t.removeAttribute("aria-current"));
+  ["home","album","about"].forEach(v=>$(v+"-view").hidden=v!==view);$("status").hidden=true;
+  $("camera-note").textContent=SITE.camera?`Shot on ${SITE.camera}`:"";
+  if(view==="album")return render(album);
+  document.title=view==="about"?`About · ${SITE.name||""}`:(SITE.name||"");
+}
+
+/* the grid loads a small or medium copy (sm/md in photos.json) sized to the slot; the viewer loads the full file */
+const WIDE="(max-width:1212px) 100vw, 1180px", HALF="(max-width:640px) 100vw, (max-width:1212px) 50vw, 580px";
+function img(p,sizes,loading="lazy",extra=""){
+  const w=p.w||1800; // real width of the full file; cropped photos can be narrower than 1800
+  const set=[p.sm&&`${p.sm} ${Math.min(640,w)}w`,p.md&&w>1200&&`${p.md} 1200w`,`${p.file} ${w}w`].filter(Boolean).join(", ");
+  return `<img loading="${loading}" alt="${esc(p.alt||p.title)}" src="${esc(p.md||p.file)}" srcset="${esc(set)}" sizes="${sizes}" style="object-position:${esc(p.focus||"50% 50%")}"${extra}>`;
+}
+
+function render(album){
+  ALBUM=album;PHOTOS=album.photos||[];
+  $("eyebrow").textContent=album.eyebrow||album.label||"";
+  $("heading").innerHTML=album.heading?esc(album.heading)+(album.headingEm?` <em>${esc(album.headingEm)}</em>`:""):esc(album.title);
+  $("subtitle").textContent=album.subtitle||"";
+  $("intro").textContent=album.intro||"";
+  $("facts").innerHTML=(album.facts||[{n:"auto",l:"Photographs"}]).map(f=>`<div class="fact"><div class="n">${esc(f.n==="auto"?PHOTOS.length:f.n)}</div><div class="l">${esc(f.l)}</div></div>`).join("");
+  const cam=album.camera||SITE.camera;
+  $("camera-note").textContent=cam?`Shot on ${cam}`:"";
+  document.title=`${album.title} · ${SITE.name||""}`;
+
+  $("hero").hidden=false;$("wall").innerHTML="";
+  if(!PHOTOS.length){$("status").hidden=false;$("status").textContent="No photos in this collection yet. Add some with the upload page.";$("hero").hidden=true;return}
+  let heroIdx=PHOTOS.findIndex(p=>p.hero);if(heroIdx<0)heroIdx=0;
+  const h=PHOTOS[heroIdx];
+  $("hero-img").outerHTML=img(h,WIDE,"eager",' id="hero-img"');
+  $("hero").onclick=()=>openLB(heroIdx);
+  $("hero").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLB(heroIdx)}};
+
+  const wall=$("wall");wall.innerHTML="";
+  const rest=PHOTOS.map((p,i)=>[p,i]).filter(([,i])=>i!==heroIdx);
+  /* every third print is wide; if the last row would hold a single half-width print, stretch it */
+  const wides=rest.map((_,k)=>k%3===2);
+  let run=0;for(let k=wides.length-1;k>=0&&!wides[k];k--)run++;
+  if(run%2===1)wides[wides.length-1]=true;
+  rest.forEach(([p,i],k)=>{
+    const wide=wides[k];
+    const fig=document.createElement("figure");
+    fig.className="print"+(wide?" wide":"");
+    fig.tabIndex=0;fig.setAttribute("role","button");fig.setAttribute("aria-label","Open "+(p.title||"photo"));
+    fig.innerHTML=`<div class="frame">${img(p,wide?WIDE:HALF)}</div>
+      <figcaption><div><div class="cap-title">${esc(p.title)}</div><div class="cap-sub">${esc(p.subtitle)}</div></div>
+      <div class="cap-tag">${esc(p.tag)}</div></figcaption>`;
+    fig.onclick=()=>openLB(i);
+    fig.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLB(i)}};
+    wall.appendChild(fig);
+  });
+}
+
+function show(i){
+  cur=(i+PHOTOS.length)%PHOTOS.length;const p=PHOTOS[cur];
+  const im=$("lb-img");im.srcset=p.md&&(p.w||1800)>1200?`${p.md} 1200w, ${p.file} ${p.w||1800}w`:"";im.sizes="100vw";im.src=p.file;im.alt=p.alt||p.title||"";
+  $("lb-title").textContent=p.title||"";
+  $("lb-sub").textContent=p.subtitle||"";
+  $("lb-story").textContent=p.story||"";
+  $("lb-count").textContent=`${cur+1} / ${PHOTOS.length}`;
+  const rows=(p.facts||[]).map(f=>[f.label,f.italic?`<i>${esc(f.value)}</i>`:esc(f.value)]);
+  const cam=cameraLine(p);
+  if(cam.body)rows.push(["Camera",esc(cam.body)]);
+  if(cam.lens)rows.push(["Lens",esc(cam.lens)]);
+  if(cam.settings)rows.push(["Settings",esc(cam.settings)]);
+  $("lb-strip").innerHTML=rows.map(([k,v])=>`<div>${esc(k)}<b>${v}</b></div>`).join("");
+}
+function openLB(i){lastFocus=document.activeElement;show(i);$("lb").hidden=false;document.body.style.overflow="hidden";$("lb-close").focus()}
+function closeLB(){$("lb").hidden=true;document.body.style.overflow="";lastFocus&&lastFocus.focus()}
+$("lb-close").onclick=closeLB;
+$("lb-prev").onclick=()=>show(cur-1);
+$("lb-next").onclick=()=>show(cur+1);
+document.addEventListener("keydown",e=>{if($("lb").hidden)return;if(e.key==="Escape")closeLB();if(e.key==="ArrowRight")show(cur+1);if(e.key==="ArrowLeft")show(cur-1)});
+$("lb").addEventListener("click",e=>{if(e.target.id==="lb"||e.target.id==="lb-stage")closeLB()});
+let sx=null;
+$("lb-stage").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+$("lb-stage").addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(cur+(dx<0?1:-1));sx=null});
+
+/* GALLERY_DATA is only set in the preview copy; the real site reads photos.json */
+/* theme: Auto (the default) follows the device's light/dark setting; Light or Dark is a manual choice remembered on this device */
+const sysLight=matchMedia("(prefers-color-scheme: light)");
+function mode(){return document.documentElement.dataset.theme||(sysLight.matches?"light":"dark")}
+function syncTheme(){
+  const m=mode(),choice=document.documentElement.dataset.theme||"auto";
+  document.documentElement.dataset.mode=m;
+  $("theme-switch").querySelectorAll("button").forEach(b=>b.setAttribute("aria-checked",b.dataset.choice===choice));
+  $("theme-color").content=m==="dark"?"#141414":"#f6f3ec";
+}
+$("theme-switch").onclick=e=>{
+  const c=e.target.closest("button")?.dataset.choice;if(!c)return;
+  if(c==="auto"){delete document.documentElement.dataset.theme;try{localStorage.removeItem("theme")}catch(e){}}
+  else{document.documentElement.dataset.theme=c;try{localStorage.setItem("theme",c)}catch(e){}}
+  syncTheme();
+};
+sysLight.addEventListener("change",syncTheme);
+syncTheme();
+
+window.addEventListener("hashchange",()=>{if(ALBUMS.length){if(!$("lb").hidden)closeLB();route();window.scrollTo(0,0)}});
+if(window.GALLERY_DATA){setup(window.GALLERY_DATA)}
+else{
+  fetch("photos.json?v="+Date.now(),{cache:"no-store"})
+    .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(setup)
+    .catch(()=>{$("hero").hidden=true;$("status").hidden=false;$("status").textContent="Could not load photos.json. Check that the file is in the same folder as this page."});
+}
+</script>
+</body>
+</html>

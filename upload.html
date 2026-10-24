@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Add Photos · Lense and Sensibility</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- Reads camera settings (aperture, shutter, ISO, lens) from the original photo -->
+<script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
+<style>
+:root{
+  --wall:#141414;--wall-2:#1d1d1c;--ink:#ece9e3;--ink-dim:#9b9890;--line:#2d2d2b;--leaf:#d8c39a;--warn:#e3a35b;--bad:#e07a6a;
+  --f-display:"Cormorant Garamond", Georgia, serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-data:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--wall);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 60px}
+[hidden]{display:none!important}
+.wrap{max-width:980px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px 18px;flex-wrap:wrap}
+h1{font-family:var(--f-display);font-weight:500;font-size:34px;margin:0;line-height:1.1}
+a{color:var(--leaf)}
+.panel{background:var(--wall-2);border:1px solid var(--line);border-radius:6px;padding:20px;margin-bottom:20px;min-width:0}
+.panel h2{font-family:var(--f-display);font-weight:500;font-size:24px;margin:0 0 4px}
+.sub{color:var(--ink-dim);margin:0 0 16px;font-size:13.5px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+label.f{display:grid;gap:4px;font-size:11px;font-family:var(--f-data);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim);min-width:0}
+label.f input,label.f textarea{font:inherit;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);background:var(--wall);border:1px solid var(--line);border-radius:4px;padding:8px 10px;width:100%}
+label.f textarea{min-height:64px;resize:vertical}
+label.f select{font:inherit;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);background:var(--wall);border:1px solid var(--line);border-radius:4px;padding:8px 10px;width:100%}
+label.f input:focus,label.f textarea:focus,label.f select:focus{outline:none;border-color:var(--leaf)}
+.group{font-family:var(--f-data);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin:18px 0 10px}
+.group:first-child{margin-top:0}
+.check{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-dim)}
+.row-btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+button{font:inherit;cursor:pointer;border-radius:4px;padding:9px 16px;font-size:14px;border:1px solid var(--line);background:var(--wall);color:var(--ink)}
+button:hover{border-color:var(--leaf)}
+button:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+button.primary{background:var(--leaf);color:#1a160d;border-color:var(--leaf);font-weight:600}
+button:disabled{opacity:.5;cursor:not-allowed}
+.msg{font-size:13.5px;min-height:1.3em}
+.msg.ok{color:var(--leaf)}.msg.bad{color:var(--bad)}.msg.warn{color:var(--warn)}
+.drop{display:block;border:1.5px dashed #4a4c44;border-radius:6px;padding:30px 16px;text-align:center;color:var(--ink-dim);font-size:13.5px;cursor:pointer}
+.drop.over{border-color:var(--leaf);color:var(--ink)}
+.drop strong{color:var(--ink);display:block;font-size:15px;margin-bottom:4px}
+.drop input{display:none}
+.item{display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+@media (max-width:560px){.item{grid-template-columns:1fr}}
+.item img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px;display:block}
+.fields{display:grid;gap:10px;min-width:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--f-data);font-size:10.5px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink-dim)}
+.chip.ok{color:var(--leaf);border-color:#4a4232}
+.chip.bad{color:var(--bad);border-color:#5a3029}
+.item .rm{justify-self:start;padding:4px 10px;font-size:12px}
+.existing{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.ex{min-width:0}
+.ex img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px;display:block}
+.ex .t{font-size:13px;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ex .b{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.ex .b button{padding:3px 8px;font-size:11.5px}
+.cover{font-family:var(--f-data);font-size:10px;color:var(--leaf);letter-spacing:.06em;text-transform:uppercase}
+code{font-family:var(--f-data);font-size:12.5px;background:var(--wall);padding:1px 5px;border-radius:3px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Add photos</h1>
+    <a href="./">← Back to the gallery</a>
+  </header>
+
+  <section class="panel" id="settings">
+    <h2>1. Connect to GitHub</h2>
+    <p class="sub">Your key stays in this browser only. Visitors who open this page cannot upload anything without it.</p>
+    <div class="grid">
+      <label class="f">GitHub username<input id="owner" autocomplete="username" placeholder="your-username"></label>
+      <label class="f">Repository name<input id="repo" placeholder="photography"></label>
+      <label class="f">Branch<input id="branch" value="main"></label>
+      <label class="f">Access key (token)<input id="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+    </div>
+    <div class="row-btns">
+      <label class="check"><input type="checkbox" id="remember" checked> Remember on this device</label>
+      <button id="connect" class="primary">Connect</button>
+      <button id="forget">Forget key</button>
+      <span class="msg" id="conn-msg" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="panel" id="add" hidden>
+    <h2>2. Choose photos and write captions</h2>
+    <p class="sub">Each photo is resized to 2400 px on its long side and saved as a fresh JPEG, which removes the hidden GPS location. Camera settings are read first and kept as text.</p>
+    <div class="grid" style="margin-bottom:14px">
+      <label class="f">Add these photos to tab<select id="album"></select></label>
+    </div>
+    <div class="grid" id="new-album" hidden style="margin-bottom:14px">
+      <label class="f">New tab name<input id="na-title" placeholder="Coorg Trip"></label>
+      <label class="f">Place and year (optional)<input id="na-label" placeholder="Coorg · 2026"></label>
+      <label class="f" style="grid-column:1/-1">Short description (optional)<textarea id="na-intro" placeholder="A few lines that appear at the top of this tab."></textarea></label>
+    </div>
+    <label class="drop" id="drop"><strong>Drop photos here or tap to choose</strong>JPG or PNG straight from the camera is fine<input type="file" id="files" accept="image/jpeg,image/png,image/webp,image/heic" multiple></label>
+    <div id="items"></div>
+    <div class="row-btns">
+      <button id="publish" class="primary" disabled>Publish</button>
+      <span class="msg" id="pub-msg" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="panel" id="manage" hidden>
+    <h2>Photos already in the gallery</h2>
+    <p class="sub">Choose the cover photo or remove a photo. Changes show on the site in about a minute.</p>
+    <div class="existing" id="existing"></div>
+    <div class="row-btns"><span class="msg" id="man-msg" aria-live="polite"></span></div>
+  </section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MAX_SIDE=2400, QUALITY=0.85;
+let cfg={owner:"",repo:"",branch:"main",token:""};
+let queue=[]; // {file, blob, url, camera, title, subtitle, tag, story, cover}
+
+/* ---------- settings ---------- */
+function loadCfg(){try{const s=JSON.parse(localStorage.getItem("gallery-upload")||"null");if(s)cfg={...cfg,...s}}catch(e){}
+  ["owner","repo","branch","token"].forEach(k=>$(k).value=cfg[k]||(k==="branch"?"main":""));
+  if(!cfg.repo){const m=location.hostname.match(/^([^.]+)\.github\.io$/);if(m){$("owner").value=m[1];$("repo").value=location.pathname.split("/").filter(Boolean)[0]||(m[1]+".github.io")}}
+}
+function saveCfg(){try{if($("remember").checked)localStorage.setItem("gallery-upload",JSON.stringify(cfg));else localStorage.removeItem("gallery-upload")}catch(e){}}
+function msg(id,text,kind){const el=$(id);el.textContent=text;el.className="msg"+(kind?" "+kind:"")}
+
+async function gh(path,opts={}){
+  const r=await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}${path}`,{
+    ...opts,headers:{"Accept":"application/vnd.github+json","Authorization":"Bearer "+cfg.token,"X-GitHub-Api-Version":"2022-11-28",...(opts.headers||{})}});
+  if(!r.ok){let t="";try{t=(await r.json()).message}catch(e){}const err=new Error(t||("HTTP "+r.status));err.status=r.status;throw err}
+  return r.status===204?null:r.json();
+}
+const enc=s=>{const b=new TextEncoder().encode(s);let o="";for(let i=0;i<b.length;i+=0x8000)o+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(o)};
+const dec=b64=>new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\n/g,"")),c=>c.charCodeAt(0)));
+const blobB64=blob=>new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result.split(",")[1]);fr.onerror=rej;fr.readAsDataURL(blob)});
+
+/* older photos.json files had one flat photo list; turn it into a single tab */
+function normalize(data){
+  if(!data.albums){data.albums=[{id:"photos",title:"Photos",photos:data.photos||[]}];delete data.photos}
+  return data;
+}
+async function readGallery(){
+  const f=await gh(`/contents/photos.json?ref=${encodeURIComponent(cfg.branch)}`);
+  return {data:normalize(JSON.parse(dec(f.content))),sha:f.sha};
+}
+async function writeGallery(data,sha,message){
+  return gh(`/contents/photos.json`,{method:"PUT",body:JSON.stringify({message,branch:cfg.branch,sha,content:enc(JSON.stringify(data,null,2)+"\n")})});
+}
+/* read-modify-write with one retry if someone else changed the file meanwhile */
+async function updateGallery(fn,message){
+  for(let attempt=0;attempt<2;attempt++){
+    const {data,sha}=await readGallery();fn(data);
+    try{await writeGallery(data,sha,message);return data}catch(e){if(e.status!==409||attempt)throw e}
+  }
+}
+
+$("connect").onclick=async()=>{
+  cfg={owner:$("owner").value.trim(),repo:$("repo").value.trim(),branch:$("branch").value.trim()||"main",token:$("token").value.trim()};
+  if(!cfg.owner||!cfg.repo||!cfg.token){msg("conn-msg","Fill in the username, repository and access key.","bad");return}
+  msg("conn-msg","Connecting…");
+  try{
+    const r=await gh("");
+    if(r.permissions&&!r.permissions.push){msg("conn-msg","This key can read the repository but not write to it. Give it “Contents: Read and write”.","bad");return}
+    saveCfg();msg("conn-msg",`Connected to ${r.full_name}.`,"ok");
+    $("add").hidden=false;$("manage").hidden=false;refreshExisting();
+  }catch(e){
+    msg("conn-msg",e.status===401?"GitHub rejected the key. Check that you copied it fully and it hasn't expired.":e.status===404?"Repository not found. Check the names, and that the key has access to this repository.":"Could not connect: "+e.message,"bad");
+  }
+};
+$("forget").onclick=()=>{try{localStorage.removeItem("gallery-upload")}catch(e){}$("token").value="";cfg.token="";msg("conn-msg","Key removed from this browser.","ok");$("add").hidden=true;$("manage").hidden=true};
+
+/* ---------- camera settings ---------- */
+function niceBody(make,model){
+  if(!model)return "";
+  let m=String(model).trim().replace(/m(\d)$/,(_,d)=>" Mark "+({2:"II",3:"III",4:"IV"}[d]||d));
+  if(make&&!m.toLowerCase().startsWith(String(make).split(" ")[0].toLowerCase()))m=make.split(" ")[0]+" "+m;
+  return m;
+}
+async function readCamera(file){
+  try{
+    const x=await exifr.parse(file,{tiff:true,exif:true,gps:false});
+    if(!x)return null;
+    const c={};
+    const body=niceBody(x.Make,x.Model);if(body)c.body=body;
+    if(x.LensModel)c.lens=String(x.LensModel).trim();
+    if(x.FocalLength)c.focal=Math.round(x.FocalLength)+"mm";
+    if(x.FNumber)c.f="f/"+(+x.FNumber.toFixed(1));
+    if(x.ExposureTime)c.s=x.ExposureTime>=1?(+x.ExposureTime.toFixed(1))+"s":"1/"+Math.round(1/x.ExposureTime)+"s";
+    if(x.ISO)c.iso="ISO "+x.ISO;
+    return Object.keys(c).length?c:null;
+  }catch(e){return null}
+}
+
+/* ---------- resize (also strips GPS and all other hidden data) ---------- */
+/* returns the full photo plus medium and small copies, which the gallery grid loads for speed */
+const SIZES=[["blob",MAX_SIDE,QUALITY],["md",1200,0.8],["sm",640,0.78]];
+async function shrink(file){
+  const bmp=await createImageBitmap(file); // browsers apply the photo's rotation automatically
+  const out={};
+  for(const [key,side,q] of SIZES){
+    const k=Math.min(1,side/Math.max(bmp.width,bmp.height));
+    const c=document.createElement("canvas");c.width=Math.round(bmp.width*k);c.height=Math.round(bmp.height*k);
+    const ctx=c.getContext("2d");ctx.imageSmoothingQuality="high";ctx.drawImage(bmp,0,0,c.width,c.height);
+    out[key]=await new Promise(res=>c.toBlob(res,"image/jpeg",q));
+    if(key==="blob")out.w=c.width;
+  }
+  return out;
+}
+const kb=n=>n>1048576?(n/1048576).toFixed(1)+" MB":Math.round(n/1024)+" KB";
+
+async function addFiles(list){
+  for(const file of list){
+    if(!file.type.startsWith("image/")&&!/\.heic$/i.test(file.name))continue;
+    const item={file,title:file.name.replace(/\.[^.]+$/,"").replace(/[_-]+/g," "),subtitle:"",tag:"",story:"",cover:false};
+    queue.push(item);renderItems();
+    try{
+      item.camera=await readCamera(file);
+      Object.assign(item,await shrink(file));
+      item.url=URL.createObjectURL(item.blob);
+    }catch(e){item.error="This browser can't open this photo type. Try exporting it as JPG first."}
+    renderItems();
+  }
+}
+function renderItems(){
+  $("items").innerHTML=queue.map((it,i)=>{
+    const cam=it.camera?[it.camera.body,it.camera.focal,it.camera.f,it.camera.s,it.camera.iso].filter(Boolean).join(" · "):"";
+    return `<div class="item" data-i="${i}">
+      ${it.url?`<img src="${it.url}" alt="">`:`<div class="chip">${it.error?"Can't open":"Preparing…"}</div>`}
+      <div class="fields">
+        <label class="f">Title<input data-k="title" id="t${i}" value="${esc(it.title)}"></label>
+        <div class="grid">
+          <label class="f">Subtitle (what or where)<input data-k="subtitle" id="s${i}" value="${esc(it.subtitle)}" placeholder="Asian elephant"></label>
+          <label class="f">Small label (optional)<input data-k="tag" id="g${i}" value="${esc(it.tag)}" placeholder="Elephas maximus"></label>
+        </div>
+        <label class="f">Story<textarea data-k="story" id="d${i}" placeholder="What was happening when you took it?">${esc(it.story)}</textarea></label>
+        <div class="chips">
+          ${it.error?`<span class="chip bad">${esc(it.error)}</span>`:""}
+          ${it.blob?`<span class="chip ok">Location removed</span><span class="chip">${kb(it.file.size)} → ${kb(it.blob.size)}</span>`:""}
+          ${cam?`<span class="chip">${esc(cam)}</span>`:(it.blob?`<span class="chip">No camera settings found</span>`:"")}
+        </div>
+        <div class="row-btns" style="margin-top:0">
+          <label class="check"><input type="checkbox" data-k="cover" id="c${i}" ${it.cover?"checked":""}> Use as cover photo</label>
+          <button class="rm" data-rm="${i}">Remove</button>
+        </div>
+      </div></div>`}).join("");
+  const ready=queue.filter(q=>q.blob).length;
+  $("publish").disabled=!ready||queue.some(q=>!q.blob&&!q.error);
+  $("publish").textContent=ready?`Publish ${ready} photo${ready>1?"s":""}`:"Publish";
+}
+$("items").addEventListener("input",e=>{const k=e.target.dataset.k;if(!k)return;const i=+e.target.closest(".item").dataset.i;
+  if(k==="cover"){queue.forEach(q=>q.cover=false);queue[i].cover=e.target.checked;renderItems()}else queue[i][k]=e.target.value});
+$("items").addEventListener("click",e=>{const i=e.target.dataset.rm;if(i===undefined)return;const it=queue[+i];if(it.url)URL.revokeObjectURL(it.url);queue.splice(+i,1);renderItems()});
+$("files").onchange=e=>{addFiles([...e.target.files]);e.target.value=""};
+const drop=$("drop");
+["dragenter","dragover"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add("over")}));
+["dragleave","drop"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove("over")}));
+drop.addEventListener("drop",e=>addFiles([...e.dataTransfer.files]));
+
+/* ---------- publish ---------- */
+const slug=s=>(s||"photo").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"photo";
+$("publish").onclick=async()=>{
+  const items=queue.filter(q=>q.blob);if(!items.length)return;
+  if($("album").value==="__new"&&!$("na-title").value.trim()){msg("pub-msg","Give the new tab a name first.","bad");$("na-title").focus();return}
+  $("publish").disabled=true;
+  try{
+    const added=[];
+    for(let n=0;n<items.length;n++){
+      const it=items[n];
+      msg("pub-msg",`Uploading photo ${n+1} of ${items.length}…`);
+      const name=`${slug(it.title)}-${Date.now().toString(36).slice(-5)}.jpg`,path=`photos/${name}`;
+      await gh(`/contents/${path}`,{method:"PUT",body:JSON.stringify({message:`Add photo: ${it.title}`,branch:cfg.branch,content:await blobB64(it.blob)})});
+      const entry={file:path,title:it.title.trim(),subtitle:it.subtitle.trim(),tag:it.tag.trim(),story:it.story.trim(),alt:(it.subtitle||it.title).trim(),facts:[]};
+      if(it.w)entry.w=it.w;
+      for(const k of ["md","sm"]){
+        await gh(`/contents/photos/${k}/${name}`,{method:"PUT",body:JSON.stringify({message:`Add ${k} copy: ${it.title}`,branch:cfg.branch,content:await blobB64(it[k])})});
+        entry[k]=`photos/${k}/${name}`;
+      }
+      if(it.camera)entry.camera=it.camera;
+      if(it.cover)entry.hero=true;
+      added.push(entry);
+    }
+    msg("pub-msg","Adding captions…");
+    const target=$("album").value,isNew=target==="__new";
+    const na={title:$("na-title").value.trim(),label:$("na-label").value.trim(),intro:$("na-intro").value.trim()};
+    let tabName="";
+    await updateGallery(d=>{
+      let al=isNew?null:d.albums.find(a=>a.id===target);
+      if(!al){
+        let id=slug(na.title),k=2;while(d.albums.some(a=>a.id===id))id=slug(na.title)+"-"+k++;
+        al={id,title:na.title,label:na.label,intro:na.intro,facts:[{n:"auto",l:"Photographs"}],photos:[]};
+        d.albums.push(al);
+      }
+      al.photos=al.photos||[];tabName=al.title;
+      if(added.some(a=>a.hero))al.photos.forEach(p=>delete p.hero);
+      al.photos.push(...added);
+    },`Add ${added.length} photo${added.length>1?"s":""}`);
+    queue.forEach(q=>q.url&&URL.revokeObjectURL(q.url));queue=[];renderItems();
+    if(isNew){["na-title","na-label","na-intro"].forEach(k=>$(k).value="")}
+    msg("pub-msg",`Published ${added.length} photo${added.length>1?"s":""} to “${tabName}”. The gallery updates in about a minute.`,"ok");
+    refreshExisting();
+  }catch(e){msg("pub-msg","Upload stopped: "+e.message+". Photos already sent are safe; press Publish again for the rest.","bad");$("publish").disabled=false}
+};
+
+/* ---------- manage existing ---------- */
+/* tab picker: existing tabs plus "new tab" */
+function fillAlbums(albums){
+  const sel=$("album"),keep=sel.value;
+  sel.innerHTML=albums.map(a=>`<option value="${esc(a.id)}">${esc(a.title)}</option>`).join("")+`<option value="__new">+ New tab…</option>`;
+  if([...sel.options].some(o=>o.value===keep))sel.value=keep;
+  $("new-album").hidden=sel.value!=="__new";
+}
+$("album").onchange=()=>{$("new-album").hidden=$("album").value!=="__new"};
+
+async function refreshExisting(){
+  try{
+    const {data}=await readGallery();fillAlbums(data.albums);
+    const any=data.albums.some(a=>(a.photos||[]).length);
+    $("existing").innerHTML=any?data.albums.filter(a=>(a.photos||[]).length).map(a=>`<div class="group" style="grid-column:1/-1">${esc(a.title)}</div>`+
+      a.photos.map(p=>`<div class="ex">
+      <img loading="lazy" src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/${p.sm||p.file}" alt="">
+      <div class="t">${esc(p.title)}</div>
+      ${p.hero?`<div class="cover">Cover photo</div>`:""}
+      <div class="b">${p.hero?"":`<button data-cover="${esc(p.file)}">Make cover</button>`}<button data-del="${esc(p.file)}">Remove</button></div></div>`).join("")).join("")
+      :`<p class="sub">No photos yet.</p>`;
+  }catch(e){msg("man-msg","Could not read photos.json: "+e.message,"bad")}
+}
+const albumOf=(d,file)=>d.albums.find(a=>(a.photos||[]).some(p=>p.file===file));
+$("existing").addEventListener("click",async e=>{
+  const c=e.target.dataset.cover,d=e.target.dataset.del;
+  if(c===undefined&&d===undefined)return;
+  try{
+    if(c!==undefined){
+      msg("man-msg","Saving…");
+      await updateGallery(g=>{const a=albumOf(g,c);if(a)a.photos.forEach(p=>{if(p.file===c)p.hero=true;else delete p.hero})},"Change cover photo");
+      msg("man-msg","Cover photo changed.","ok");
+    }else{
+      const {data}=await readGallery();const p=albumOf(data,d)?.photos.find(x=>x.file===d);if(!p)return;
+      if(!confirm(`Remove “${p.title}” from the gallery? This deletes the photo file too.`))return;
+      msg("man-msg","Removing…");
+      await updateGallery(g=>{const a=albumOf(g,p.file);if(a)a.photos=a.photos.filter(x=>x.file!==p.file)},`Remove photo: ${p.title}`);
+      for(const path of [p.file,p.md,p.sm].filter(Boolean)){
+        try{const f=await gh(`/contents/${path}?ref=${encodeURIComponent(cfg.branch)}`);
+          await gh(`/contents/${path}`,{method:"DELETE",body:JSON.stringify({message:`Delete ${path}`,branch:cfg.branch,sha:f.sha})})}catch(err){}
+      }
+      msg("man-msg",`Removed “${p.title}”.`,"ok");
+    }
+    refreshExisting();
+  }catch(err){msg("man-msg","Could not save: "+err.message,"bad")}
+});
+
+loadCfg();
+if(cfg.token)$("connect").click();
+</script>
+</body>
+</html>

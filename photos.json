@@ -1,0 +1,478 @@
+{
+  "site": {
+    "name": "Lense and Sensibility",
+    "author": "Amit Singh",
+    "tagline": "Photographs by Amit Singh",
+    "camera": "Canon EOS R6 Mark II",
+    "about": [
+      "I'm Amit Singh, PhD. I've worked as a scientist and a professor, and today I'm a Senior Staff RF Engineer at Lam Research, working on the RF generators and plasma sources inside semiconductor manufacturing equipment.",
+      "My career has taken me across Asia and the US, and a camera comes along wherever I go. Lense and Sensibility is where I share the photographs I like best, one collection per tab. Tap any photo to see it full screen with a short note about the moment."
+    ],
+    "welcome": "Photographs from trips and slow days with a camera.",
+    "portrait": "portrait.jpg",
+    "role": "Senior Staff RF Engineer · Photographer",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/amitksinghnus/"
+      }
+    ],
+    "aboutName": "Amit Singh, PhD"
+  },
+  "albums": [
+    {
+      "id": "mysore-trip",
+      "title": "Mysore Trip",
+      "label": "Mysore Zoo · 2026",
+      "eyebrow": "Sri Chamarajendra Zoological Gardens, Mysuru",
+      "heading": "The elephant's",
+      "headingEm": "dust bath",
+      "subtitle": "Seventeen photographs from a day at Mysore Zoo, from basking crocodiles to a sleeping leopard.",
+      "intro": "I spent a slow day at Mysore Zoo with a long lens, waiting for small moments: a deer turning its head, a baboon pausing on its perch, a hippo resting its chin. Tap any photo to see it full screen with a short note about the animal.",
+      "camera": "Canon EOS R6 Mark II",
+      "facts": [
+        {
+          "n": "auto",
+          "l": "Photographs"
+        },
+        {
+          "n": "14",
+          "l": "Species"
+        },
+        {
+          "n": "2",
+          "l": "Continents"
+        }
+      ],
+      "photos": [
+        {
+          "file": "photos/elephant.jpg",
+          "title": "The elephant's dust bath",
+          "subtitle": "Asian elephant",
+          "tag": "Elephas maximus",
+          "story": "She curled her trunk and tossed a cloud of dust over her back. A dust coat works like sunscreen and keeps biting insects away.",
+          "alt": "An Asian elephant throwing dust over its back, framed by tall trees",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Elephas maximus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "South and Southeast Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Endangered"
+            }
+          ],
+          "focus": "50% 90%",
+          "hero": true,
+          "sm": "photos/sm/elephant.jpg",
+          "md": "photos/md/elephant.jpg",
+          "w": 1296
+        },
+        {
+          "file": "photos/hippo.jpg",
+          "title": "Resting chin",
+          "subtitle": "Hippopotamus",
+          "tag": "Hippopotamus amphibius",
+          "story": "Up close, the wet skin shows every fold and bump. Hippos give off a reddish oily fluid that protects their skin from the sun.",
+          "alt": "Close-up side profile of a wet hippopotamus resting its chin on a concrete ledge",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Hippopotamus amphibius",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Sub-Saharan Africa"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "sm": "photos/sm/hippo.jpg",
+          "md": "photos/md/hippo.jpg",
+          "w": 1656
+        },
+        {
+          "file": "photos/gharial.jpg",
+          "title": "Seen from above",
+          "subtitle": "Gharial",
+          "tag": "Gavialis gangeticus",
+          "story": "Looking straight down shows the thin snout, built for snapping up fish. The gharial is one of the rarest crocodilians on Earth.",
+          "alt": "A gharial seen from directly above, its long thin snout pointing across green water",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Gavialis gangeticus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Rivers of the Indian subcontinent"
+            },
+            {
+              "label": "Status",
+              "value": "Critically Endangered"
+            }
+          ],
+          "focus": "50% 40%",
+          "sm": "photos/sm/gharial.jpg",
+          "md": "photos/md/gharial.jpg",
+          "w": 1548
+        },
+        {
+          "file": "photos/deer.jpg",
+          "title": "The herd turns to look",
+          "subtitle": "Spotted deer (chital)",
+          "tag": "Axis axis",
+          "story": "One stag looked up, then the whole herd followed. Each chital keeps its white spots for life.",
+          "alt": "A herd of spotted deer under trees, several turned toward the camera",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Axis axis",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Indian subcontinent"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ],
+          "focus": "50% 55%",
+          "sm": "photos/sm/deer.jpg",
+          "md": "photos/md/deer.jpg",
+          "w": 1800
+        },
+        {
+          "file": "photos/baboon.jpg",
+          "title": "On the lookout",
+          "subtitle": "Hamadryas baboon",
+          "tag": "Papio hamadryas",
+          "story": "The silver mane marks him as an adult male. The pink bougainvillea behind him made a soft, colorful background.",
+          "alt": "A silver-maned hamadryas baboon standing on a wooden platform, pink flowers behind",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Papio hamadryas",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Horn of Africa and Arabia"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ],
+          "focus": "50% 45%",
+          "sm": "photos/sm/baboon.jpg",
+          "md": "photos/md/baboon.jpg",
+          "w": 1116
+        },
+        {
+          "file": "photos/chimps.jpg",
+          "title": "Quiet company",
+          "subtitle": "Chimpanzee",
+          "tag": "Pan troglodytes",
+          "story": "One chimp sat hugging his knees and held my gaze for a long moment. A peahen walks along the wall behind them.",
+          "alt": "Two chimpanzees sitting on a log platform, one hugging its knees and looking at the camera",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Pan troglodytes",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "West and Central Africa"
+            },
+            {
+              "label": "Status",
+              "value": "Endangered"
+            }
+          ],
+          "focus": "50% 45%",
+          "sm": "photos/sm/chimps.jpg",
+          "md": "photos/md/chimps.jpg",
+          "w": 1080
+        },
+        {
+          "file": "photos/crocodile.jpg",
+          "title": "Teeth in the shade",
+          "subtitle": "Crocodile",
+          "tag": "Crocodylus",
+          "story": "Two crocodiles rest under a log bench beside the pool. Even with the jaws shut, the teeth stay on show.",
+          "alt": "Two crocodiles resting under a wooden log bench beside a green pool",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Crocodylus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Tropical Africa and Asia"
+            }
+          ],
+          "focus": "50% 66%",
+          "sm": "photos/sm/crocodile.jpg",
+          "md": "photos/md/crocodile.jpg",
+          "w": 1530
+        },
+        {
+          "file": "photos/lioness.jpg",
+          "title": "Watching the fence",
+          "subtitle": "Lion",
+          "tag": "Panthera leo",
+          "story": "She stood perfectly still behind the rock, watching something along the fence line.",
+          "alt": "A lioness standing behind a large rock, looking along the enclosure fence",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Panthera leo",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Africa and Gir Forest, India"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "sm": "photos/sm/lioness.jpg",
+          "md": "photos/md/lioness.jpg",
+          "w": 1116
+        },
+        {
+          "file": "photos/macaque.jpg",
+          "title": "Waiting on the log",
+          "subtitle": "Rhesus macaque",
+          "tag": "Macaca mulatta",
+          "story": "Plain wall, green grass, and one monkey on a hollow log. The simple background lets him stand out.",
+          "alt": "A rhesus macaque sitting on a hollow log in green grass",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Macaca mulatta",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "South, Central and East Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ],
+          "focus": "50% 60%",
+          "sm": "photos/sm/macaque.jpg",
+          "md": "photos/md/macaque.jpg",
+          "w": 1080
+        },
+        {
+          "file": "photos/leopard.jpg",
+          "title": "Afternoon nap",
+          "subtitle": "Leopard",
+          "tag": "Panthera pardus",
+          "story": "One leopard sleeps flat out on the wooden platform while a second dozes in the shade below. Leopards rest for most of the day and hunt mainly at night.",
+          "alt": "A leopard asleep on a raised wooden platform in front of a stone wall, a second leopard lying below",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Panthera pardus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Africa and Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "focus": "50% 62%",
+          "sm": "photos/sm/leopard.jpg",
+          "md": "photos/md/leopard.jpg",
+          "w": 1200
+        },
+        {
+          "file": "photos/painted-stork.jpg",
+          "title": "Painted in pink",
+          "subtitle": "Painted stork",
+          "tag": "Mycteria leucocephala",
+          "story": "Shot from below against the aviary roof. The pink feathers near the tail give the painted stork its name, and the heavy yellow bill is made for catching fish.",
+          "alt": "Close-up of a painted stork with a pink face and long yellow bill, standing on a branch",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Mycteria leucocephala",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "South and Southeast Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Near Threatened"
+            }
+          ],
+          "sm": "photos/sm/painted-stork.jpg",
+          "md": "photos/md/painted-stork.jpg",
+          "w": 1800
+        },
+        {
+          "file": "photos/night-herons.jpg",
+          "title": "Adults and young",
+          "subtitle": "Black-crowned night heron",
+          "tag": "Nycticorax nycticorax",
+          "story": "An adult perches on top of the leaves while two streaky brown juveniles sit lower down. The young birds take about three years to get the grey-and-white adult colours.",
+          "alt": "An adult black-crowned night heron standing on broad green leaves, with two brown-streaked juveniles to its left",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Nycticorax nycticorax",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Every continent except Australia and Antarctica"
+            },
+            {
+              "label": "Status",
+              "value": "Least Concern"
+            }
+          ],
+          "sm": "photos/sm/night-herons.jpg",
+          "md": "photos/md/night-herons.jpg",
+          "w": 1500
+        },
+        {
+          "file": "photos/elephant-herd.jpg",
+          "title": "Hay on their backs",
+          "subtitle": "Asian elephants",
+          "tag": "Elephas maximus",
+          "story": "Three elephants head off after feeding, with loose hay still piled on their backs. Elephants often toss food and dust over themselves.",
+          "alt": "Three Asian elephants seen from behind walking across a dirt enclosure, hay on their backs",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Elephas maximus",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "South and Southeast Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Endangered"
+            }
+          ],
+          "focus": "50% 56%",
+          "sm": "photos/sm/elephant-herd.jpg",
+          "md": "photos/md/elephant-herd.jpg",
+          "w": 1460
+        },
+        {
+          "file": "photos/sambar.jpg",
+          "title": "Ears up",
+          "subtitle": "Sambar deer",
+          "tag": "Rusa unicolor",
+          "story": "A hind stands alert while a stag rests behind her. Sambar are the largest deer in India, and only the stags grow antlers.",
+          "alt": "A sambar hind standing in a muddy enclosure with a resting antlered stag behind her",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Rusa unicolor",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "South and Southeast Asia"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "sm": "photos/sm/sambar.jpg",
+          "md": "photos/md/sambar.jpg",
+          "w": 1400
+        },
+        {
+          "file": "photos/giraffe.jpg",
+          "title": "Over the rail",
+          "subtitle": "Giraffe",
+          "tag": "Giraffa camelopardalis",
+          "story": "A giraffe walks past the railing with the trees behind it softly out of focus. Every giraffe has its own coat pattern, like a fingerprint.",
+          "alt": "Head and neck of a giraffe in profile above a black railing, green trees blurred behind",
+          "facts": [
+            {
+              "label": "Species",
+              "value": "Giraffa camelopardalis",
+              "italic": true
+            },
+            {
+              "label": "Native to",
+              "value": "Sub-Saharan Africa"
+            },
+            {
+              "label": "Status",
+              "value": "Vulnerable"
+            }
+          ],
+          "sm": "photos/sm/giraffe.jpg",
+          "md": "photos/md/giraffe.jpg",
+          "w": 1600
+        },
+        {
+          "file": "photos/aviary.jpg",
+          "title": "Sharing the treetop",
+          "subtitle": "Painted stork and night herons",
+          "tag": "Walk-through aviary",
+          "story": "Inside the aviary, a painted stork towers over the night herons perched around it in the same tree.",
+          "alt": "A painted stork standing in a leafy tree inside a netted aviary, several night herons perched nearby",
+          "facts": [
+            {
+              "label": "Birds",
+              "value": "Painted stork, black-crowned night herons"
+            }
+          ],
+          "focus": "50% 55%",
+          "sm": "photos/sm/aviary.jpg",
+          "md": "photos/md/aviary.jpg",
+          "w": 1600
+        },
+        {
+          "file": "photos/zoo-shuttle.jpg",
+          "title": "The ride around",
+          "subtitle": "Zoo shuttle",
+          "tag": "Mysore Zoo",
+          "story": "Battery-powered carts carry visitors along the shaded paths between the enclosures.",
+          "alt": "A green battery-powered cart carrying visitors along a paved path lined with trees and bamboo",
+          "facts": [],
+          "focus": "50% 62%",
+          "sm": "photos/sm/zoo-shuttle.jpg",
+          "md": "photos/md/zoo-shuttle.jpg",
+          "w": 1200
+        }
+      ]
+    }
+  ]
+}
